@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class PPMSample3Test {
     @Test 
-    public void test1() { 
+    public void Sample3Test() { 
         Assert.assertTrue(true);
     }
 
