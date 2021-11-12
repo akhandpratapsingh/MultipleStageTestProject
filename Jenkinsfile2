@@ -7,7 +7,7 @@ pipeline {
       stage("Test1") {
         steps {
 		echo'Test1'
-		sh 'mvn test -Dtest="PPMSample2Test.*" -Dpublish'
+		sh 'mvn test -Dtest="ppmtests.*" -Dpublish'
 		}
 	post{
 		success{
@@ -19,7 +19,7 @@ pipeline {
       stage("Test2") {
         steps {
                  echo'Test2'
-                 sh'mvn test -Dtest="PPMSample3Test.*" -Dpublish'
+                 sh'mvn test -Dtest="unittests.*" -Dpublish'
               }
         post{
               success{
