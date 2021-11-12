@@ -19,7 +19,7 @@ pipeline {
       stage("Test2") {
         steps {
                  echo'Test2'
-                 sh 'mvn test -Dtest=PPMUnit3Test'
+                 sh 'mvn test -Dtest=PPMSample3Test'
               }
         post{
               success{
