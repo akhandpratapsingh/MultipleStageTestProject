@@ -12,7 +12,7 @@ pipeline {
 	post{
 		success{
 		  echo'Test1-success'
-		  junit"**/target/surefire-reports/*.xml"
+		  junit"**/target/surefire-reports/*hello1.*.xml"
 		}
        	     } 
       }
@@ -24,7 +24,7 @@ pipeline {
         post{
               success{
                 echo'Test2-success'
-                junit"**/target/surefire-reports/*.xml"
+                junit"**/target/surefire-reports/*hello2.*.xml"
               }
            } 
        }
