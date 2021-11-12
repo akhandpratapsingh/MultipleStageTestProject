@@ -7,24 +7,24 @@ pipeline {
       stage("Test1") {
         steps {
 		echo'Test1'
-		sh 'mvn test -Dtest=PPMSample2Test'
+		sh 'mvn test -Dtest="ppmtests.*"'
 		}
 	post{
 		success{
 		  echo'Test1-success'
-		  junit"**/target/surefire-reports/*ppmtests.*.xml"
+		  junit"**/target/surefire-reports/*.xml"
 		}
        	     } 
       }
       stage("Test2") {
         steps {
                  echo'Test2'
-                 sh 'mvn test -Dtest=PPMSample3Test'
+                 sh'mvn test -Dtest="unittests.*"'
               }
         post{
               success{
                 echo'Test2-success'
-                junit"**/target/surefire-reports/*ppmtests.*.xml"
+                junit"**/target/surefire-reports/*.xml"
               }
            } 
        }
