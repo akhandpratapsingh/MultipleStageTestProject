@@ -4,10 +4,10 @@ pipeline {
     maven "Maven"
   }
   stages {
-      stage("Test1") {
+      stage("Stage1") {
         steps {
-		echo'Test1'
-		sh 'mvn test -Dtest=*.*'
+		echo'Stage1'
+		sh 'mvn test -Dtest=PPMSample2Test'
 		}
 	post{
 		success{
@@ -16,10 +16,10 @@ pipeline {
 		}
        	     } 
       }
-      stage("Test2") {
+      stage("Stage2") {
         steps {
-                 echo'Test2'
-                 sh'mvn test -Dtest=*.*'
+                 echo'Stage2'
+                 sh'mvn test -Dtest=PPMSample3Test'
               }
         post{
               success{
