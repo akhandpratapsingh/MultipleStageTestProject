@@ -1,0 +1,32 @@
+pipeline {
+  agent any
+  tools {
+    maven "Maven"
+  }
+  stages {
+      stage("Test1") {
+        steps {
+		echo'Test1'
+		sh 'mvn test -Dtest="PPMSample2Test.*" -Dpublish'
+		}
+	post{
+		success{
+		  echo'Test1-success'
+		  junit"**/target/surefire-reports/*.xml"
+		}
+       	     } 
+      }
+      stage("Test2") {
+        steps {
+                 echo'Test2'
+                 sh'mvn test -Dtest="PPMSample3Test.*" -Dpublish'
+              }
+        post{
+              success{
+                echo'Test2-success'
+                junit"**/target/surefire-reports/*.xml"
+              }
+           } 
+       }
+  }
+}
