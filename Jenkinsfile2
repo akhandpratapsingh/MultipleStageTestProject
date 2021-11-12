@@ -24,7 +24,7 @@ pipeline {
         post{
               success{
                 echo'Test2-success'
-                junit"**/target/surefire-reports/*unittests.*.xml"
+                junit"**/target/surefire-reports/*ppmtests.*.xml"
               }
            } 
        }
