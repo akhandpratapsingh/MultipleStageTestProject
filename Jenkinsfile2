@@ -12,19 +12,19 @@ pipeline {
 	post{
 		success{
 		  echo'Test1-success'
-		  junit"**/target/surefire-reports/*.xml"
+		  junit"**/target/surefire-reports/*ppmtests.*.xml"
 		}
        	     } 
       }
       stage("Test2") {
         steps {
                  echo'Test2'
-                 sh 'mvn test -Dtest=PPMSample3Test'
+                 sh 'mvn test -Dtest=PPMUnit3Test'
               }
         post{
               success{
                 echo'Test2-success'
-                junit"**/target/surefire-reports/*.xml"
+                junit"**/target/surefire-reports/*unittests.*.xml"
               }
            } 
        }
