@@ -7,7 +7,7 @@ public class PPMSample2Test {
 
 	
     @Test 
-    public void test1() { 
+    public void Sample2Test() { 
         Assert.assertTrue(true);
     }
 
